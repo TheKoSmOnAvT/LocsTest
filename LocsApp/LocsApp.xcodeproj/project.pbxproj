@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3838F0C424DAAFD000DDB9D4 /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3838F0C324DAAFD000DDB9D4 /* EventListViewModel.swift */; };
 		383B318624CE9F98008E39B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B318524CE9F98008E39B3 /* AppDelegate.swift */; };
 		383B318824CE9F98008E39B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B318724CE9F98008E39B3 /* SceneDelegate.swift */; };
 		383B318B24CE9F98008E39B3 /* LocsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 383B318924CE9F98008E39B3 /* LocsApp.xcdatamodeld */; };
@@ -14,12 +15,13 @@
 		383B318F24CE9F9A008E39B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 383B318E24CE9F9A008E39B3 /* Assets.xcassets */; };
 		383B319224CE9F9A008E39B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 383B319124CE9F9A008E39B3 /* Preview Assets.xcassets */; };
 		383B319524CE9F9A008E39B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 383B319324CE9F9A008E39B3 /* LaunchScreen.storyboard */; };
-		383B319E24CE9FC4008E39B3 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B319D24CE9FC4008E39B3 /* EventView.swift */; };
+		383B319E24CE9FC4008E39B3 /* EventRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B319D24CE9FC4008E39B3 /* EventRowView.swift */; };
 		3880373624D9B5770082F9F7 /* EventApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3880373524D9B5770082F9F7 /* EventApi.swift */; };
-		3880373924D9BA1B0082F9F7 /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3880373824D9BA1B0082F9F7 /* EventList.swift */; };
+		3880373924D9BA1B0082F9F7 /* EventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3880373824D9BA1B0082F9F7 /* EventListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3838F0C324DAAFD000DDB9D4 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
 		383B318224CE9F97008E39B3 /* LocsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		383B318524CE9F98008E39B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		383B318724CE9F98008E39B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,9 +31,9 @@
 		383B319124CE9F9A008E39B3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		383B319424CE9F9A008E39B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		383B319624CE9F9A008E39B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		383B319D24CE9FC4008E39B3 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		383B319D24CE9FC4008E39B3 /* EventRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRowView.swift; sourceTree = "<group>"; };
 		3880373524D9B5770082F9F7 /* EventApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventApi.swift; sourceTree = "<group>"; };
-		3880373824D9BA1B0082F9F7 /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
+		3880373824D9BA1B0082F9F7 /* EventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3838F0C224DAAF9400DDB9D4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3838F0C324DAAFD000DDB9D4 /* EventListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		383B317924CE9F97008E39B3 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +74,7 @@
 		383B318424CE9F98008E39B3 /* LocsApp */ = {
 			isa = PBXGroup;
 			children = (
+				3838F0C224DAAF9400DDB9D4 /* ViewModel */,
 				3880373724D9B9A60082F9F7 /* Model */,
 				3880373224D9B5470082F9F7 /* Api */,
 				383B319C24CE9FA8008E39B3 /* View */,
@@ -90,7 +101,7 @@
 		383B319C24CE9FA8008E39B3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				383B319D24CE9FC4008E39B3 /* EventView.swift */,
+				383B319D24CE9FC4008E39B3 /* EventRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -106,7 +117,7 @@
 		3880373724D9B9A60082F9F7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3880373824D9BA1B0082F9F7 /* EventList.swift */,
+				3880373824D9BA1B0082F9F7 /* EventListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,13 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3880373924D9BA1B0082F9F7 /* EventList.swift in Sources */,
+				3880373924D9BA1B0082F9F7 /* EventListModel.swift in Sources */,
 				383B318624CE9F98008E39B3 /* AppDelegate.swift in Sources */,
 				383B318824CE9F98008E39B3 /* SceneDelegate.swift in Sources */,
 				383B318D24CE9F98008E39B3 /* ContentView.swift in Sources */,
 				3880373624D9B5770082F9F7 /* EventApi.swift in Sources */,
 				383B318B24CE9F98008E39B3 /* LocsApp.xcdatamodeld in Sources */,
-				383B319E24CE9FC4008E39B3 /* EventView.swift in Sources */,
+				383B319E24CE9FC4008E39B3 /* EventRowView.swift in Sources */,
+				3838F0C424DAAFD000DDB9D4 /* EventListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

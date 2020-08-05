@@ -11,7 +11,8 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        EventView()
+        EventRowView(listEvent: eventshortlist(id: 1, name: "names", info: "aaaaaaaaaaaaaaaaa...", image: "", tags: ["tags","event"]))
+       // EventRowView(listEvent: <#eventshortlist#>)
     }
 }
 

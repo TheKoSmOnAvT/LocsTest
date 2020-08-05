@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct EventList : Decodable {
+public struct EventListModel : Decodable {
     
     let count : Int
     let Events : [Events]?
@@ -16,13 +16,12 @@ public struct EventList : Decodable {
     struct Events  : Decodable {
         let eventshortlist :  eventshortlist
     }
-    
-    struct eventshortlist : Decodable{
-        let  id : Int
-        let  name : String?
-        let  info : String?
-        let  image : String?
-        let  tags : [String]?
-    }
-       
+           
 }
+public  struct eventshortlist : Decodable{
+       let  id : Int
+       let  name : String?
+       let  info : String?
+       let  image : String?
+       let  tags : [String]?
+   }
