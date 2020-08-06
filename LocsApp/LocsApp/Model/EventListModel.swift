@@ -13,11 +13,13 @@ public struct EventListModel : Decodable {
     let count : Int
     let Events : [Events]?
     
-    struct Events  : Decodable {
-        let eventshortlist :  eventshortlist
-    }
+    
            
 }
+public struct Events  : Decodable {
+    let eventshortlist :  eventshortlist
+}
+
 public  struct eventshortlist : Decodable{
        let  id : Int
        let  name : String?

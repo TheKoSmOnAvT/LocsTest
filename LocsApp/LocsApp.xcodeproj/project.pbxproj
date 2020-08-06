@@ -18,6 +18,7 @@
 		383B319E24CE9FC4008E39B3 /* EventRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B319D24CE9FC4008E39B3 /* EventRowView.swift */; };
 		3880373624D9B5770082F9F7 /* EventApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3880373524D9B5770082F9F7 /* EventApi.swift */; };
 		3880373924D9BA1B0082F9F7 /* EventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3880373824D9BA1B0082F9F7 /* EventListModel.swift */; };
+		38EE499724DC58A80090777A /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE499624DC58A80090777A /* EventListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		383B319D24CE9FC4008E39B3 /* EventRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRowView.swift; sourceTree = "<group>"; };
 		3880373524D9B5770082F9F7 /* EventApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventApi.swift; sourceTree = "<group>"; };
 		3880373824D9BA1B0082F9F7 /* EventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListModel.swift; sourceTree = "<group>"; };
+		38EE499624DC58A80090777A /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				383B319D24CE9FC4008E39B3 /* EventRowView.swift */,
+				38EE499624DC58A80090777A /* EventListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3880373924D9BA1B0082F9F7 /* EventListModel.swift in Sources */,
+				38EE499724DC58A80090777A /* EventListView.swift in Sources */,
 				383B318624CE9F98008E39B3 /* AppDelegate.swift in Sources */,
 				383B318824CE9F98008E39B3 /* SceneDelegate.swift in Sources */,
 				383B318D24CE9F98008E39B3 /* ContentView.swift in Sources */,

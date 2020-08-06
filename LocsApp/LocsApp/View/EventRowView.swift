@@ -9,27 +9,29 @@
 import SwiftUI
 
 struct EventRowView: View {
-    var listEvent : eventshortlist
+    var event : eventshortlist
  //   @State var randomArray : [Int] = randomArrayIndexTags(tags: listEvent.tags?)
     var body: some View {
         HStack(alignment: .center, spacing: 5){
             Image("event").resizable()
             .scaledToFit()
-            .frame(width: 70   , height: 70)
+            .frame(width: 65   , height: 65)
             VStack(alignment: .leading){
-                Text(listEvent.name!).font(.headline)
+                Text(event.name!).font(.headline)
                     .padding(.leading, 15)
              //   Text(listEvent.info  ??  "")
              //   .padding(.leading, 5)
             }.frame(width: 100, alignment: .leading)
             Spacer()
+            
+      
             VStack(alignment: .leading,   spacing: 5){
-                ForEach(randomArrayIndexTags(tagsArray: listEvent.tags), id: \.self) { index in
-                    Text("\(self.listEvent.tags![index])")
+                ForEach(randomArrayIndexTags(tagsArray: event.tags), id: \.self) { index in
+                    Text("\(self.event.tags![index])")
                 }
             }
             
-        }
+        }.padding(.all, 10.0)
         
     
         }
@@ -60,6 +62,6 @@ struct EventRowView_Previews: PreviewProvider {
        // let listEvent = EventListViewModel()
        // let a = listEvent.listEvent.Events!
        
-        EventRowView(listEvent: eventshortlist(id: 1, name: "names", info: "aaaaaaaaaaaaaaaaa...", image: "", tags: ["tags","event","tusa"]))
+        EventRowView(event: eventshortlist(id: 1, name: "names", info: "aaaaaaaaaaaaaaaaa...", image: "", tags: ["tags","event","tusa"])).previewLayout(.fixed(width: 300, height: 70))
     }
 }
