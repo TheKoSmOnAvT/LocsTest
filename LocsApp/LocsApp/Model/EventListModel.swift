@@ -11,10 +11,7 @@ import Foundation
 public struct EventListModel : Decodable {
     
     let count : Int
-    let Events : [Events]?
-    
-    
-           
+    let Events : [Events]?      
 }
 public struct Events  : Decodable {
     let eventshortlist :  eventshortlist
