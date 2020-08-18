@@ -10,21 +10,26 @@ import Foundation
 
 
 
-public struct Event {
-    
+public struct EventModel : Decodable {
     let id : Int
     let name :String
     let info : String
     let link :  String
     let ticket_price : Float
-    let organizer : String
-    let addressStreet : String
-    let addressHouse : String
-    let lattitude : Float
-    let longtitude : Float
+    let id_organizer : Int
+    let id_address : Int
     let image : String
+    let organization_name : String
     let logo : String
-    let datatime : String
-    let tags : [String]
+    let datatime : DataTime
+    let tags : [Int]
     
+}
+
+public struct DataTime : Decodable {
+    let year : Int
+    let mouth : Int
+    let date : Int
+    let hourse :Int
+    let minutes : Int
 }
