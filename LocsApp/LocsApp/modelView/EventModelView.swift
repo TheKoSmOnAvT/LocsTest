@@ -7,27 +7,25 @@
 //
 
 import Foundation
+import Combine
 
-class EventModelView {
-    var event : Event?
-    var error : String?
-   // var id : Int?
-    
-    
-    
-    init() {
-        //self.id = id
-    }
+class EventModelView :  ObservableObject{
+   @Published var event : Event?
+    @Published var error : String?
+
     
     func gedata(id : Int){
-        print("1")
+        print("5")
         let a = EventService(id: id)
+        
         if let err = a.error {
-            error = err
-            print("2")
+            error = String(err.localizedDescription)
             return
         }
-        if let data = a.data{
+        //асинхронно работает как-то?
+        print("\(a.data!)")
+        
+        if let data = a.data {
             self.event = Event(id: data.id,
                                name: data.name,
                                info: data.info,
@@ -41,8 +39,7 @@ class EventModelView {
                               tags: [Tag(id: 1, title: "test"),
                                     Tag(id: 2, title: "test2")
                                 ])
-        print("3")
         }
-        
+        print("3")
     }
 }

@@ -9,14 +9,16 @@
 import SwiftUI
 
 struct EventView: View {
-    var id: Int?
-    var viewModel = EventModelView()
+    var id: Int
+    
+     @ObservedObject var viewModel = EventModelView()
     var body: some View {
-         VStack {
+        VStack {
             Text(viewModel.event?.name ?? "fail")
+            //Text(viewModel.event!.info)
             Text("123123123")
        }.onAppear {
-        self.viewModel.gedata(id: self.id ?? -1)
+        self.viewModel.gedata(id: self.id ?? 0)
        }
     }
 }

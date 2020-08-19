@@ -28,8 +28,8 @@ public struct EventModel : Decodable {
 
 public struct DataTime : Decodable {
     let year : Int
-    let mouth : Int
+    let month : Int
     let date : Int
-    let hourse :Int
+    let hours :Int
     let minutes : Int
 }
