@@ -14,11 +14,15 @@ struct EventView: View {
      @ObservedObject var viewModel = EventModelView()
     var body: some View {
         VStack {
-            Text(viewModel.event?.name ?? "fail")
-            //Text(viewModel.event!.info)
-            Text("123123123")
+            if viewModel.event != nil {
+                Text(viewModel.event!.name)
+                Text(viewModel.event!.info)
+                Text(viewModel.event!.organization_name)
+            } else {
+                  Text("error")
+            }
        }.onAppear {
-        self.viewModel.gedata(id: self.id ?? 0)
+        self.viewModel.gedata(id: self.id)
        }
     }
 }

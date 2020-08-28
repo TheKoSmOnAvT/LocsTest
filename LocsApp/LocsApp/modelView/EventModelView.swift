@@ -10,36 +10,68 @@ import Foundation
 import Combine
 
 class EventModelView :  ObservableObject{
-   @Published var event : Event?
+    @Published var event : EventModel?
     @Published var error : String?
-
+    @Published var tags : [Tag]
+    
+    init(){
+        tags = []
+    }
+    
+    
+    
     
     func gedata(id : Int){
-        print("5")
-        let a = EventService(id: id)
+        let urlPath : String = "http://localhost:4000/event/info"
+        guard let url = URL(string: urlPath) else { return }
+            var request = URLRequest(url : url)
+            request.httpMethod = "POST"
+            var json = [String:Any]()
+            json["idEvent"] = id
+            let httpBody = try? JSONSerialization.data(withJSONObject: json, options: [])
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type") // the request is JSON
+            request.setValue("application/json", forHTTPHeaderField: "Accept")
+            request.httpBody = httpBody
+            URLSession.shared.dataTask(with: request) {
+                (data, response, err) in
+                DispatchQueue.main.async {
+                    if let err = err {
+                       return
+                   }
+                   let status = (response as! HTTPURLResponse).statusCode
+                   if(status < 200 || status > 299){
+                       return
+                   } else {
+                        self.event = try? JSONDecoder().decode(EventModel.self, from: data!)
+                    self.getTags()
+                    print("123")
+                        }
+                    }
+            }.resume()
         
-        if let err = a.error {
-            error = String(err.localizedDescription)
-            return
-        }
-        //асинхронно работает как-то?
-        print("\(a.data!)")
-        
-        if let data = a.data {
-            self.event = Event(id: data.id,
-                               name: data.name,
-                               info: data.info,
-                               link: data.link,
-                               price: data.ticket_price,
-                               idOrganizer: data.id_organizer,
-                               nameOrganizer: data.organization_name,
-                               logoOrganizer: data.logo,
-                               imageEvent: data.image,
-                              date: "02-02-2020 15:00",
-                              tags: [Tag(id: 1, title: "test"),
-                                    Tag(id: 2, title: "test2")
-                                ])
-        }
-        print("3")
+    }
+    
+    
+    func getTags(){
+        let urlPath : String = "http://localhost:4000/event/tag"
+        guard let url = URL(string: urlPath) else { return }
+            var request = URLRequest(url : url)
+            request.httpMethod = "GET"
+           
+            URLSession.shared.dataTask(with: request) {
+                (data, response, err) in
+                DispatchQueue.main.async {
+                    if let err = err {
+                       return
+                   }
+                   let status = (response as! HTTPURLResponse).statusCode
+                   if(status < 200 || status > 299){
+                       return
+                   } else {
+                    let a = try? JSONDecoder().decode([Tag].self, from: data!)
+                    print(a)
+                        }
+                    }
+            }.resume()
     }
 }

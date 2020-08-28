@@ -33,3 +33,8 @@ public struct DataTime : Decodable {
     let hours :Int
     let minutes : Int
 }
+
+public struct Tag : Decodable {
+    let id : Int
+    let title : Int
+}
