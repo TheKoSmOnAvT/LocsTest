@@ -36,5 +36,5 @@ public struct DataTime : Decodable {
 
 public struct Tag : Decodable {
     let id : Int
-    let title : Int
+    let title : String
 }

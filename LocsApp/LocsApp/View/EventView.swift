@@ -18,6 +18,7 @@ struct EventView: View {
                 Text(viewModel.event!.name)
                 Text(viewModel.event!.info)
                 Text(viewModel.event!.organization_name)
+                Text(viewModel.tags[0].title ?? "errorTag")
             } else {
                   Text("error")
             }
