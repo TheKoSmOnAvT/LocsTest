@@ -18,7 +18,7 @@ public struct EventModel : Decodable {
     let ticket_price : Double
     let id_organizer : Int
     let id_address : Int
-    let image : String
+    let image : String?
     let organization_name : String
     let logo : String
     let datatime : DataTime

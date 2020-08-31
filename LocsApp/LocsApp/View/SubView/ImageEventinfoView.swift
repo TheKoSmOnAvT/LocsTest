@@ -16,8 +16,12 @@ struct ImageEventinfoView: View {
                 Text("logo evet")
              //   Image(uiImage: logo!)
             } else {
-                Image("event").resizable().frame(width: 180, height : 180).clipShape(Circle()).cornerRadius(10).overlay(Circle().stroke(Color.gray, lineWidth: 6))
-                    .shadow(radius: 6)
+                Image("event").resizable().frame(width: 100, height : 100)
+                    .padding(15).overlay(RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.orange, lineWidth: 10))
+                .background(Color.orange)
+                
+                
             }
         }
     }

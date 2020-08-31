@@ -14,12 +14,14 @@ class EventViewModel :  ObservableObject {
     
     @Published var event : EventModel?
     @Published var error : String?
-    @Published var tags : [Tag]
+    var allTags : [Tag]
+    //@Published var tags : [Tag]
     var dateString : String
     var timeString : String
     
     init(){
-        tags = []
+        allTags = []
+       // tags = []
         dateString = ""
         timeString = ""
     }
@@ -35,14 +37,30 @@ class EventViewModel :  ObservableObject {
         //тестовое решение для получения тегов
         getTag(requestGroup: requestGroup)
         
+
         
         
            //This only gets executed once all the above are done
            requestGroup.notify(queue: DispatchQueue.main, execute: {
                // Hide HUD, refresh data, etc.
+//            for i in self.event!.tags {
+//                self.tags.append(Tag ( id : i, title: "tag"))
+//               }
+            
                 print("DEBUG: all Done")
            })
-
+//        tags = [
+//                Tag(id: 1, title: "tag1"),
+//                Tag(id: 2, title: "tag2"),
+//                Tag(id: 3, title: "tag3"),
+//                Tag(id: 4, title: "tag4"),
+//                Tag(id: 5, title: "tag5"),
+//                Tag(id: 6, title: "tag6"),
+//                Tag(id: 7, title: "tag7"),
+//                Tag(id: 8, title: "tag8"),
+//                Tag(id: 9, title: "tag9"),
+//                Tag(id: 10, title: "tag10"),
+//               ]
     }
 
     func getEventInformation(id : Int, requestGroup : DispatchGroup){
@@ -57,11 +75,11 @@ class EventViewModel :  ObservableObject {
     
     
 
-    func getTag(requestGroup : DispatchGroup){
+    func getTag( requestGroup : DispatchGroup){
         AF.request("http://localhost:4000/event/tag", method: .get).responseData { response in
-         //self.tags = try? JSONDecoder().decode(Tag.self, from: response.data!)
-            self.tags.append( Tag(id: 1, title: "test"))
-         print("DEBUG: second Request")
+            var tagObj = try? JSONDecoder().decode([Tag].self, from: response.data!)
+            self.allTags = tagObj!
+         print("DEBUG: tag Request")
             requestGroup.leave()
         }
     }
