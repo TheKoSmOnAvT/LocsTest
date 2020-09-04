@@ -18,6 +18,11 @@
 		383B319524CE9F9A008E39B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 383B319324CE9F9A008E39B3 /* LaunchScreen.storyboard */; };
 		385367E724FCCC6700456232 /* FormatedTextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385367E624FCCC6700456232 /* FormatedTextArea.swift */; };
 		385367E924FCDFC600456232 /* TagsListEventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385367E824FCDFC600456232 /* TagsListEventInfo.swift */; };
+		38569D0C250281450099710C /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38569D0B250281450099710C /* EventListView.swift */; };
+		38569D0E2502816E0099710C /* EventRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38569D0D2502816E0099710C /* EventRowView.swift */; };
+		38569D12250282370099710C /* EventShortInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38569D11250282370099710C /* EventShortInfoModel.swift */; };
+		38569D142502841D0099710C /* EventShortListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38569D132502841D0099710C /* EventShortListViewModel.swift */; };
+		38569D19250295D00099710C /* EventShortInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38569D18250295D00099710C /* EventShortInfoViewModel.swift */; };
 		3862839424FA5FB800598D1F /* ImageEventinfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3862839324FA5FB800598D1F /* ImageEventinfoView.swift */; };
 		38A8B53124E599DA00FE4488 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A8B53024E599DA00FE4488 /* EventModel.swift */; };
 		A559880A64CA8FEC72D92CF6 /* Pods_LocsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9926F0576EAF6DDE6B63C6B /* Pods_LocsApp.framework */; };
@@ -37,6 +42,11 @@
 		383B319624CE9F9A008E39B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		385367E624FCCC6700456232 /* FormatedTextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatedTextArea.swift; sourceTree = "<group>"; };
 		385367E824FCDFC600456232 /* TagsListEventInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsListEventInfo.swift; sourceTree = "<group>"; };
+		38569D0B250281450099710C /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
+		38569D0D2502816E0099710C /* EventRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRowView.swift; sourceTree = "<group>"; };
+		38569D11250282370099710C /* EventShortInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventShortInfoModel.swift; sourceTree = "<group>"; };
+		38569D132502841D0099710C /* EventShortListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventShortListViewModel.swift; sourceTree = "<group>"; };
+		38569D18250295D00099710C /* EventShortInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventShortInfoViewModel.swift; sourceTree = "<group>"; };
 		3862839324FA5FB800598D1F /* ImageEventinfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEventinfoView.swift; sourceTree = "<group>"; };
 		38A8B53024E599DA00FE4488 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		7B8FFC3F2F7208FD47301ECB /* Pods-LocsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocsApp.debug.xcconfig"; path = "Target Support Files/Pods-LocsApp/Pods-LocsApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				381BA8B524EBCFF70011966D /* EventViewModel.swift */,
+				38569D132502841D0099710C /* EventShortListViewModel.swift */,
+				38569D18250295D00099710C /* EventShortInfoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -113,6 +125,7 @@
 			children = (
 				3862839224FA5F9300598D1F /* SubView */,
 				381BA8B324EBCFC70011966D /* EventView.swift */,
+				38569D0B250281450099710C /* EventListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,6 +136,7 @@
 				3862839324FA5FB800598D1F /* ImageEventinfoView.swift */,
 				385367E624FCCC6700456232 /* FormatedTextArea.swift */,
 				385367E824FCDFC600456232 /* TagsListEventInfo.swift */,
+				38569D0D2502816E0099710C /* EventRowView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -131,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				38A8B53024E599DA00FE4488 /* EventModel.swift */,
+				38569D11250282370099710C /* EventShortInfoModel.swift */,
 			);
 			path = ServiceModel;
 			sourceTree = "<group>";
@@ -267,15 +282,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38569D0C250281450099710C /* EventListView.swift in Sources */,
 				383B318624CE9F98008E39B3 /* AppDelegate.swift in Sources */,
 				385367E924FCDFC600456232 /* TagsListEventInfo.swift in Sources */,
 				383B318824CE9F98008E39B3 /* SceneDelegate.swift in Sources */,
 				381BA8B624EBCFF70011966D /* EventViewModel.swift in Sources */,
+				38569D19250295D00099710C /* EventShortInfoViewModel.swift in Sources */,
 				38A8B53124E599DA00FE4488 /* EventModel.swift in Sources */,
+				38569D0E2502816E0099710C /* EventRowView.swift in Sources */,
 				383B318D24CE9F98008E39B3 /* ContentView.swift in Sources */,
 				383B318B24CE9F98008E39B3 /* LocsApp.xcdatamodeld in Sources */,
 				381BA8B424EBCFC70011966D /* EventView.swift in Sources */,
+				38569D12250282370099710C /* EventShortInfoModel.swift in Sources */,
 				3862839424FA5FB800598D1F /* ImageEventinfoView.swift in Sources */,
+				38569D142502841D0099710C /* EventShortListViewModel.swift in Sources */,
 				385367E724FCCC6700456232 /* FormatedTextArea.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
